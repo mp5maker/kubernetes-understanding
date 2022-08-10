@@ -77,3 +77,8 @@ docker rmi --force [image_name]
 * overlay: used in Docker swarm to connect multiple Docker daemons together
 * macvlan: mac address can be assigned to a container to have it appear as a physical device on the network
 * none: disables networking, which is useful if a custom network driver is used
+
+### Docker storage
+* Containers by default are ephemeral, and so is its storage
+* Storage can be be mounted in a Docker container using the bind mount mechanism.
+* This ties the container to the hose where the storage is present
