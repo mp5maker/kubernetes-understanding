@@ -82,3 +82,9 @@ docker rmi --force [image_name]
 * Containers by default are ephemeral, and so is its storage
 * Storage can be be mounted in a Docker container using the bind mount mechanism.
 * This ties the container to the hose where the storage is present
+
+
+```bash
+docker run --rm -v /dev/log /dev/log fedora:latest logger "message from the containers"
+journalctl | grep container
+```
