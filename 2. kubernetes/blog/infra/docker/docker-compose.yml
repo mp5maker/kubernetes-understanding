@@ -3,14 +3,16 @@ version: "3.9"
 networks:
   kubernetes_basic:
 services:
-  client:
-    image: "mp5maker/kubernetes_basic_blog_client"
-    container_name: kubernetes_basic_blog_client
+  posts:
+    image: "mp5maker/kubernetes_basic_blog_posts"
+    container_name: kubernetes_basic_blog_posts
     build:
-      context: ../../client
+      context: ../../posts
       dockerfile: ./Dockerfile
     networks:
       - kubernetes_basic
+    ports:
+      - "6001:4000"
   comments:
     image: "mp5maker/kubernetes_basic_blog_comments"
     container_name: kubernetes_basic_blog_comments
@@ -19,38 +21,8 @@ services:
       dockerfile: ./Dockerfile
     networks:
       - kubernetes_basic
-  event_bus:
-    image: "mp5maker/kubernetes_basic_blog_event_bus"
-    container_name: kubernetes_basic_blog_event_bus
-    build:
-      context: ../../event-bus
-      dockerfile: ./Dockerfile
-    networks:
-      - kubernetes_basic
-  moderation:
-    image: "mp5maker/kubernetes_basic_blog_moderation"
-    container_name: kubernetes_basic_blog_moderation
-    build:
-      context: ../../moderation
-      dockerfile: ./Dockerfile
-    networks:
-      - kubernetes_basic
-  posts:
-    image: "mp5maker/kubernetes_basic_blog_posts"
-    container_name: kubernetes_basic_blog_posts
-    build:
-      context: ../../posts
-      dockerfile: ./Dockerfile
-    networks:
-      - kubernetes_basic
-  posts:
-    image: "mp5maker/kubernetes_basic_blog_posts"
-    container_name: kubernetes_basic_blog_posts
-    build:
-      context: ../../posts
-      dockerfile: ./Dockerfile
-    networks:
-      - kubernetes_basic
+    ports:
+      - "6002:4001"
   query:
     image: "mp5maker/kubernetes_basic_blog_query"
     container_name: kubernetes_basic_blog_query
@@ -59,3 +31,35 @@ services:
       dockerfile: ./Dockerfile
     networks:
       - kubernetes_basic
+    ports:
+      - "6003:4002"
+  moderation:
+    image: "mp5maker/kubernetes_basic_blog_moderation"
+    container_name: kubernetes_basic_blog_moderation
+    build:
+      context: ../../moderation
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+    ports:
+      - "6004:4003"
+  client:
+    image: "mp5maker/kubernetes_basic_blog_client"
+    container_name: kubernetes_basic_blog_client
+    build:
+      context: ../../client
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+    ports:
+      - "6005:3000"
+  event_bus:
+    image: "mp5maker/kubernetes_basic_blog_event_bus"
+    container_name: kubernetes_basic_blog_event_bus
+    build:
+      context: ../../event-bus
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+    ports:
+      - "6006:4005"
