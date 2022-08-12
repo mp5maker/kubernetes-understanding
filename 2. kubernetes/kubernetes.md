@@ -12,10 +12,41 @@ kubectl version --client --output=yaml
 brew install minikube
 ```
 
-
 ### Minikub Basic Controls
 
 ```bash
 minikube start
 minikube dashboard
+```
+
+### Kubernetes Terninology
+
+> Kubernetes Cluster
+
+A collection of nodes + a master to manage them
+
+> Node
+
+A virtual machine that will run our containers
+
+> Pod
+
+More or less a running container, technically
+a pod can run multiple containers
+
+> Deployment
+
+Monitor a set of pods, make sure thery are
+running and restarts them if they crash
+
+> Service
+
+Provides an easy-to-remember URL to
+access a running container
+
+
+### Kebernets Command
+
+```bash
+kubectl apply -f post.yaml
 ```

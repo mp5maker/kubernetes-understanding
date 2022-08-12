@@ -1,0 +1,61 @@
+version: "3.9"
+
+networks:
+  kubernetes_basic:
+services:
+  client:
+    image: "mp5maker/kubernetes_basic_blog_client"
+    container_name: kubernetes_basic_blog_client
+    build:
+      context: ../../client
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+  comments:
+    image: "mp5maker/kubernetes_basic_blog_comments"
+    container_name: kubernetes_basic_blog_comments
+    build:
+      context: ../../comments
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+  event_bus:
+    image: "mp5maker/kubernetes_basic_blog_event_bus"
+    container_name: kubernetes_basic_blog_event_bus
+    build:
+      context: ../../event-bus
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+  moderation:
+    image: "mp5maker/kubernetes_basic_blog_moderation"
+    container_name: kubernetes_basic_blog_moderation
+    build:
+      context: ../../moderation
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+  posts:
+    image: "mp5maker/kubernetes_basic_blog_posts"
+    container_name: kubernetes_basic_blog_posts
+    build:
+      context: ../../posts
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+  posts:
+    image: "mp5maker/kubernetes_basic_blog_posts"
+    container_name: kubernetes_basic_blog_posts
+    build:
+      context: ../../posts
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
+  query:
+    image: "mp5maker/kubernetes_basic_blog_query"
+    container_name: kubernetes_basic_blog_query
+    build:
+      context: ../../query
+      dockerfile: ./Dockerfile
+    networks:
+      - kubernetes_basic
