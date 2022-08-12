@@ -7,6 +7,9 @@ kubectl version --client -o json
 kubectl apply -f posts.yaml
 kubectl get pods
 kubectl delete -f posts.yaml
+kubectl get deployments
+kubectl get events
+kubectl config view
 ```
 
 
