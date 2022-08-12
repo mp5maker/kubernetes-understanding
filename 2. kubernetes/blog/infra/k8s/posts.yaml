@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
     - name: posts
-      image: mp5maker/posts:0.0.1
+      image: mp5maker/kubernetes_basic_blog_posts
