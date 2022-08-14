@@ -2,6 +2,9 @@
 minikube start --vm=true
 minikube stop
 minikube delete
+```
+
+```bash
 kubectl version -o json
 kubectl version --client -o json
 kubectl apply -f posts.yaml
@@ -10,6 +13,11 @@ kubectl delete -f posts.yaml
 kubectl get deployments
 kubectl get events
 kubectl config view
+kubectl get deployments
+kubectl delete deployment [depl_name]
+kubectl describe deployment [depl_name]
+kubectl logs -f [pod_name]
+kubectl exec -it [pod_name] sh/bash
 ```
 
 | No | Docker Commands | Kubernetes Commands |
