@@ -72,6 +72,7 @@ kubectl logs -f [pod_name]
 kubectl exec -it [pod_name] sh/bash
 kubectl rollout restart deployment [depl_name]
 kubectl get services
+kubectl apply -f .
 ```
 
 | No  | Docker Commands                        | Kubernetes Commands                 |
@@ -103,3 +104,26 @@ Makes a pod accessible from outside the cluster. This is the right way to expose
 > External Name
 
 Redirects an in-clust request to a CNAME url.
+
+
+### Load Balancer Service Vs Ingress
+
+> Load Balancer Service
+
+* Tells kubernetes to reach out to its provider and provision a load balancer.
+* Get traffic to a single pod
+
+
+> Ingress
+
+* A pod with a set of routing rules to distribute traffic to other services
+
+
+### Ingress Nginx
+
+* A project that will create a load balancer service and an ingress for us
+
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
+```
