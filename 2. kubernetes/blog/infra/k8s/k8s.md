@@ -127,3 +127,13 @@ Redirects an in-clust request to a CNAME url.
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
 ```
+
+### Run Kubernets in localhost for [MacOS/Linux]
+
+> /etc/hosts
+
+```bash
+
+127.0.0.1 posts.com
+
+```
