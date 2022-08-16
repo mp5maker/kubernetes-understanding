@@ -73,6 +73,8 @@ kubectl exec -it [pod_name] sh/bash
 kubectl rollout restart deployment [depl_name]
 kubectl get services
 kubectl apply -f .
+kubectl get ns
+kubectl delete all  --all -n ingress-nginx
 ```
 
 | No  | Docker Commands                        | Kubernetes Commands                 |
