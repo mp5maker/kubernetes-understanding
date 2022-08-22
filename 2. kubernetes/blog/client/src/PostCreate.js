@@ -8,7 +8,7 @@ const PostCreate = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    await axios.post(`${POST_ENDPOINT}/posts`, {
+    await axios.post(`${POST_ENDPOINT}/posts/create`, {
       title,
     });
 

@@ -1,2 +1,2 @@
-export const POST_ENDPOINT = "http://localhost:6001"
-export const COMMENT_ENDPOINT = "http://localhost:6002"
+export const POST_ENDPOINT = "http://posts.com"
+export const COMMENT_ENDPOINT = "http://posts.com"
