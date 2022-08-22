@@ -139,3 +139,11 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 127.0.0.1 posts.com
 
 ```
+
+
+### Use Skaffold for development
+
+```bash
+brew install skaffold
+skaffold dev
+```
